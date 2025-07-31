@@ -1,0 +1,155 @@
+/* --- Global Theme & Variables --- */
+:root {
+    --bg-color: #1a1a2a; /* Dark blue-gray */
+    --surface-color: #2a2a3a; /* Slightly lighter surface */
+    --primary-color: #8a4fff; /* Vibrant Purple */
+    --secondary-color: #30d5c8; /* Teal accent */
+    --text-color: #e0e0e0;
+    --text-muted-color: #a0a0a0;
+    --border-color: #444455;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Basic Styles & Layout --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.hidden { display: none !important; }
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--surface-color);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+}
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-content h1 { font-size: 1.5rem; margin: 0; }
+#welcome-message { margin-right: 1rem; color: var(--text-muted-color); }
+
+/* --- Buttons & Links --- */
+.btn-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+.btn-primary { background-color: var(--primary-color); color: #ffffff; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(138, 79, 255, 0.4); }
+.btn-secondary { background-color: transparent; color: var(--secondary-color); border: 2px solid var(--secondary-color); }
+.btn-secondary:hover { background-color: var(--secondary-color); color: var(--bg-color); }
+.btn-danger { background-color: var(--error-color); color: white; }
+.btn-success { background-color: var(--success-color); color: white; }
+a { color: var(--secondary-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Forms --- */
+.form-container { max-width: 500px; }
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.form-group input:focus { border-color: var(--primary-color); outline: none; }
+.form-divider { border-color: var(--border-color); margin: 2rem 0; }
+.form-note { color: var(--text-muted-color); font-size: 0.9rem; }
+.form-switch, .form-links { margin-top: 1.5rem; }
+
+/* --- Dashboard --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: auto;
+}
+.card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.card h3 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+
+/* Profile Card */
+.profile-card { text-align: center; }
+.profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color); margin-bottom: 1rem; }
+#profile-name { margin: 0; color: var(--text-color); }
+.skills-container { display: flex; justify-content: space-around; text-align: left; margin-top: 1rem; }
+.skills-list { list-style: none; padding-left: 0; }
+.skills-list li { background-color: var(--bg-color); padding: 5px 10px; border-radius: 5px; margin-bottom: 5px; font-size: 0.9rem; }
+
+/* Lists (Notifications, Friends, etc.) */
+.item-list { max-height: 200px; overflow-y: auto; }
+.item-list .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.item-list .list-item:hover { background-color: var(--bg-color); }
+.item-list .list-item:last-child { border-bottom: none; }
+.list-item button { margin-left: 10px; padding: 5px 8px; font-size: 0.8rem; }
+
+/* Chat */
+.chat-card #friends-list .list-item.active { background-color: var(--primary-color); }
+#chat-window { margin-top: 1rem; }
+#chat-messages { height: 180px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+#chat-messages .message { margin-bottom: 10px; }
+#chat-messages .message.sent { text-align: right; }
+#chat-messages .message p { display: inline-block; max-width: 70%; padding: 8px 12px; border-radius: 15px; background-color: var(--bg-color); }
+#chat-messages .message.sent p { background-color: var(--primary-color); }
+#chat-form { display: flex; }
+#chat-form input { flex-grow: 1; border-radius: 8px 0 0 8px; }
+#chat-form button { border-radius: 0 8px 8px 0; }
+
+/* Video Call */
+.video-container { display: flex; gap: 1rem; margin-top: 1rem; background-color: #000; border-radius: 8px; }
+#local-video, #remote-video { width: 50%; aspect-ratio: 4 / 3; background-color: #111; }
+
+/* --- Community Page --- */
+.community-container { padding: 2rem; max-width: 1200px; margin: auto; }
+.search-bar { margin-bottom: 2rem; }
+#search-input { width: 100%; padding: 15px; font-size: 1.2rem; background-color: var(--surface-color); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 8px; }
+.user-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.user-card { background-color: var(--surface-color); padding: 1.5rem; border-radius: 12px; text-align: center; }
+.map-container { height: 400px; border-radius: 12px; margin-top: 1rem; }

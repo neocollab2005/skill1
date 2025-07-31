@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SkillSwap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>SkillSwap Dashboard</h1>
+            <div>
+                <span id="welcome-message">Welcome, User!</span>
+                <a href="/community.html" class="btn btn-secondary">Community</a>
+                <button id="logout-btn" class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="card profile-card">
+            <img id="profile-pic" src="" alt="Profile Picture" class="profile-img">
+            <h2 id="profile-name"></h2>
+            <div class="skills-container">
+                <div>
+                    <h3>Skills I Have</h3>
+                    <ul id="skills-known-list" class="skills-list"></ul>
+                </div>
+                <div>
+                    <h3>Skills I Want</h3>
+                    <ul id="skills-wanted-list" class="skills-list"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Notifications</h3>
+            <div id="notifications-list" class="item-list">
+                </div>
+        </section>
+        
+        <section class="card chat-card">
+            <h3>Friends & Chat</h3>
+            <div id="friends-list" class="item-list">
+                </div>
+            <div id="chat-window" class="hidden">
+                <h4 id="chat-with-name"></h4>
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" required>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="card video-card">
+            <h3>Video Call</h3>
+            <p>Select a friend from the list to start a call.</p>
+            <div id="video-call-controls" class="hidden">
+                 <button id="start-call-btn" class="btn btn-success">Call</button>
+                 <button id="end-call-btn" class="btn btn-danger hidden">End Call</button>
+            </div>
+            <div class="video-container">
+                <video id="local-video" autoplay muted playsinline></video>
+                <video id="remote-video" autoplay playsinline></video>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h3>Recommended Matches</h3>
+            <div id="matches-list" class="item-list">
+                </div>
+        </section>
+        
+        <section class="card">
+            <h3>Recent Activity</h3>
+            <ul id="activity-log" class="item-list">
+                </ul>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

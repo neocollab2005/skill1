@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkillSwap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container form-container">
+        <h2>Create Your Account</h2>
+        <p>Join our community to start swapping skills!</p>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="skillsKnown">Skills You Have (comma-separated)</label>
+                <input type="text" id="skillsKnown" name="skillsKnown" placeholder="e.g., HTML, Python, Guitar">
+            </div>
+            <div class="form-group">
+                <label for="skillsWanted">Skills You Want (comma-separated)</label>
+                <input type="text" id="skillsWanted" name="skillsWanted" placeholder="e.g., JavaScript, Piano, Spanish">
+            </div>
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture URL (optional)</label>
+                <input type="url" id="profilePicture" name="profilePicture" placeholder="https://example.com/image.png">
+            </div>
+            <hr class="form-divider">
+            <p class="form-note">For password recovery:</p>
+            <div class="form-group">
+                <label for="securityQuestion">Security Question</label>
+                <input type="text" id="securityQuestion" name="securityQuestion" value="What city were you born in?" required>
+            </div>
+            <div class="form-group">
+                <label for="securityAnswer">Security Answer</label>
+                <input type="text" id="securityAnswer" name="securityAnswer" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p class="form-switch">Already have an account? <a href="/login.html">Login here</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
